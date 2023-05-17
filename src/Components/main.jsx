@@ -3,10 +3,9 @@ import React, {useState} from 'react';
 const Main = () => {
 
     let [titles, titlesAdd] = useState([]);
-    // let id = 0;
 
     window.onload = () => {
-        for (let i = 1; i < 21; i++) {
+        for (let i = 1; i < 46; i++) {
             fetch(`https://jsonplaceholder.typicode.com/todos/${i}`)
                 .then(response => response.json())
                 .then(json => {
@@ -14,54 +13,6 @@ const Main = () => {
                 })
         }
     }
-    // window.onload = () => {
-    //     if (window.innerWidth * window.innerHeight / 10 >= 120000) {
-    //         for (let i = 1; i < 21; i++) {
-    //             fetch(`https://jsonplaceholder.typicode.com/todos/${i}`)
-    //                 .then(response => response.json())
-    //                 .then(json => {
-    //                     titlesAdd(titles => [...titles, json.title])
-    //                 })
-    //         }
-    //         id = 1;
-    //     }
-    //     else if (window.innerWidth * window.innerHeight / 10 < 120000 && window.innerWidth * window.innerHeight / 10 >= 100000) {
-    //         for (let i = 1; i < 17; i++) {
-    //             fetch(`https://jsonplaceholder.typicode.com/todos/${i}`)
-    //                 .then(response => response.json())
-    //                 .then(json => {
-    //                     titlesAdd(titles => [...titles, json.title])
-    //                 })
-    //         }
-    //         id = 2;
-    //     }
-    // }
-
-    // window.addEventListener('resize', (event) => {
-    //     if (window.innerWidth * window.innerHeight / 10 >= 120000 && id !== 1) {
-    //         titlesAdd(titles = [])
-    //         for (let i = 1; i < 21; i++) {
-    //             fetch(`https://jsonplaceholder.typicode.com/todos/${i}`)
-    //                 .then(response => response.json())
-    //                 .then(json => {
-    //                     titlesAdd(titles => [...titles, json.title])
-    //                 })
-    //         }
-    //         id = 1;
-    //     }
-    //     else if (window.innerWidth * window.innerHeight / 10 < 120000 && window.innerWidth * window.innerHeight / 10 >= 100000  && id !== 2) {
-    //         titlesAdd(titles = [])
-    //         for (let i = 1; i < 17; i++) {
-    //             fetch(`https://jsonplaceholder.typicode.com/todos/${i}`)
-    //                 .then(response => response.json())
-    //                 .then(json => {
-    //                     titlesAdd(titles => [...titles, json.title])
-    //                 })
-    //         }
-    //         id = 2;
-    //     }
-    //     else id = 3;
-    // })
 
     return (
         <div className={"main"}>
